@@ -2,29 +2,29 @@ body {
     background-color: beige;
 }
 .container {
-    flex-wrap: wrap;
     display: grid;
+    grid-gap: 0.2%;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
     grid-template-areas:
     "header header header"
     "main main aside"
     "main main aside"
-    "main main aside"
-    "footer footer footer";
-    
-
+    "footer footer aside";
 }
 
 header {
     font-size: 170%;
     font-family:Arial, Helvetica, sans-serif;
     text-align: center;
-    grid-column: 1/4;
+    grid-area: header;
     color: rgb(95, 163, 219);
+    background-color: bisque;
+    border: 4px solid gray;
+    border-radius: 5px;
 }
 
-#history {
+.history {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 200%;
     text-align: center;
@@ -32,9 +32,12 @@ header {
 }
 
 main {
-    grid-column: 1/3;
-    grid-row: 2/5;
-    margin: 0;
+    grid-area: main;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: bisque;
+    border: 4px solid gray;
+    border-radius: 5px;
 }
 
 .job {
@@ -44,13 +47,15 @@ main {
 }
 
 aside {
-    grid-column: 3/4;
-    grid-row: 2/5;
+    grid-area: aside;
     background-color: gray;
-    height: fit-content;
+    height:fit-content;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
 }
 
-#ref {
+.ref {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 200%;
     text-align: center;
@@ -62,6 +67,41 @@ ul {
     list-style: none;
 }
 
-@media (min-width: 780px) {
-
+.list {
+    text-align: left;
 }
+
+.contact {
+    text-align: left;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(65, 59, 97);
+}
+
+
+footer {
+    grid-area: footer;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: bisque;
+    border: 4px solid gray;
+    border-radius: 5px;
+}
+ 
+@media (max-width: 700px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.4fr 0.2fr 0.6fr;
+        grid-template-areas:
+        "header"
+        "aside"
+        "main"
+        "footer" ;
+    }
+
+    .list, .contact {
+        text-align: center;
+        margin: 0;
+    }
+  }
