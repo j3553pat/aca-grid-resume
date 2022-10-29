@@ -80,7 +80,6 @@ ul {
     color: rgb(65, 59, 97);
 }
 
-
 footer {
     grid-area: footer;
     margin: 0;
@@ -90,11 +89,11 @@ footer {
     border-radius: 5px;
 }
  
-@media (max-width: 699px) {
+@media (min-width: 375px) {
     .container {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 0.2fr 0.4fr 0.2fr 0.6fr;
+        grid-template-rows: 0.2fr 0.4fr 0.2fr 0.4fr;
         grid-template-areas:
         "header"
         "aside"
@@ -105,4 +104,17 @@ footer {
     .list, .contact {
         text-align: left;
     }
+  }
+
+  @media (min-width: 768px) {
+    .container {display: grid;
+    grid-gap: 0.2%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+    "header header header"
+    "main main aside"
+    "main main aside"
+    "footer footer aside";
+  }
   }
