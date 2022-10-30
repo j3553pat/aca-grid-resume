@@ -55,6 +55,8 @@ aside {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     margin: 0;
+    height: 730px;
+    overflow: scroll;
 }
 
 .ref {
@@ -89,7 +91,7 @@ footer {
     border-radius: 5px;
 }
  
-@media (min-width: 375px) {
+@media (min-width: 376px) {
     .container {
         display: grid;
         grid-template-columns: 1fr;
@@ -101,20 +103,32 @@ footer {
         "footer" ;
     }
 
-    .list, .contact {
-        text-align: left;
+        .list,
+        .contact {
+            text-align: left;
+        }
+    
+        aside {
+            grid-area: aside;
+            background-color: bisque;
+            border: 4px solid gray;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0;
+        }
     }
-  }
-
-  @media (min-width: 768px) {
-    .container {display: grid;
-    grid-gap: 0.2%;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
-    grid-template-areas:
-    "header header header"
-    "main main aside"
-    "main main aside"
-    "footer footer aside";
-  }
-  }
+    
+        @media (min-width: 1234px) {
+            .container {
+                display: grid;
+                grid-gap: 0.2%;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: auto auto auto 0.6fr;
+                grid-template-areas:
+                    "header header header"
+                    "main main aside"
+                    "main main aside"
+                    "footer footer footer";
+            } 
+        }
